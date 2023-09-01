@@ -1,0 +1,109 @@
+@use "_variables.scss" as v;
+
+:root{
+    --details-images: "";
+    --five-star:"";
+    --four-star:"";
+    --three-star:"";
+    --two-star:"";
+    --one-star:"";
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Dosis;
+    src: url("fonts/Dosis/static/Dosis-Medium.ttf");
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: Quicksand;
+    src: url("fonts/Quicksand/static/Quicksand-Medium.ttf");
+}
+
+
+button {
+    background: initial;
+    border: 1px solid black;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+ul{
+    list-style: none;
+}
+
+h6, h5, h4, h3, h2, h1{
+    line-height: 1.2;
+    margin-bottom: 0.39rem;
+}
+
+input, button, select, optgroup, textarea{
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+p{
+    margin: 15px;
+}
+
+img{
+    vertical-align: middle;
+}
+
+.reset-pad{
+    padding: 0 13%
+}
+
+.dp-none{
+    display: none;
+}
+
+.dp-block{
+    display: block;
+}
+
+.link{
+    text-decoration: none;
+    color: inherit;
+}
+
+.required, .alert{
+    color: red;
+}
+
+.success{
+    color: #288a2a;
+}
+.bg-success{
+    background: #42bf6ed8;
+
+}
+.bg-error{
+    background: #ee3f5e;
+}
+
+.font-bold{
+    font-weight: bold;
+}
+
+
+.theme-color{
+    color: v.$theme-color;
+}

@@ -1,0 +1,244 @@
+@use '_variables.scss' as v;
+
+.sign{
+    padding: 0 13%;
+    margin: 0 0 100px;
+}
+
+.sign-wrapper{
+    width: 90%;
+    margin: auto;
+    padding: 30px 20px;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.8);
+    border-radius: 25px;
+   
+
+    .sign-content{
+        animation: clearly 500ms reverse;
+
+        @keyframes clearly {
+            100% {opacity: 35% ;}
+            0%   {opacity: 100%;}
+        }
+    }  
+
+    .sign-intro{
+        text-align: center;
+        border-bottom: 2px dashed lightgrey ;
+        padding: 0 0 20px;
+        margin: 0 30px;
+
+        h3{
+            font-size: 1.3rem;
+        }
+
+        h5{
+            color: grey;
+        }
+    }
+}
+
+.sign-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 30px 0;
+    border-radius: 10px;
+    
+    .input-box{
+        display: flex;
+        width: 50%;
+        height: auto;
+        justify-content: center;
+        position: relative;
+
+        input{
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid grey;
+            margin: 15px 0 10px;
+            width: 100%;
+            
+            
+            &:focus{
+                border: 1px solid v.$theme-color;
+                outline: 1px solid v.$theme-color;
+            }
+
+            &:focus + label, &:not(:placeholder-shown) + label{
+                background-color: rgba(255, 255, 255, 1);
+                font-size: 0.8rem;
+                top: 3px;
+                left: 20px;
+                color: black;
+                font-weight: bold;
+             }
+        }
+
+
+        label{
+            padding: 0 10px;
+            border-radius: 10px;
+            position: absolute;
+            color: grey;
+            top: 30%;
+            left: 35px;
+            pointer-events: none;
+            transition: 300ms;
+
+        }
+
+
+        .pass-icon{
+            display: inline-block;
+            position: absolute;
+            right: 15px;
+            top: 25px;
+            cursor: pointer;
+            transition: 300ms;
+
+            &:hover{
+                transform: scale(1.3);
+            }
+            &:active{
+                color: v.$theme-color;
+            }
+        }
+
+
+       
+
+    }
+
+    .pass-option{
+        width: 50%;
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+
+        a{
+            text-decoration: none;
+            color: initial;
+
+            &:hover{
+                color: red;
+            }
+        }
+    }
+
+    button{
+        margin: 20px 0 10px;
+        padding: 10px 20px;
+        border-radius: 10px;  
+        transition: 300ms;
+
+        &:hover{
+            background: rgb(66, 66, 66);
+            color: v.$theme-color;
+            border: 1px solid transparent;
+        }
+    }
+
+    input[type = checkbox]{
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        margin-right: 10px;
+    }
+}
+
+.addition-box{
+    margin-top: 20px;
+}
+
+.success-noti{
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(33, 216, 33);
+}
+
+.error-noti{
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: red;
+}
+
+
+.password-requirements{
+    margin: 13px 0;
+    font-size: 0.9rem;
+
+    .bi{
+        font-size: 20px;
+        display: inline-block;
+        padding: 5px 10px;
+    }
+
+    .bi-check-circle-fill{
+        color: rgb(0, 192, 0);
+    }
+
+    .bi-exclamation-circle-fill{
+        color: red;
+    }
+}
+
+.error-small-noti{
+    color: red;
+    font-size: 0.85rem;
+    padding: 0 0 15px;
+}
+
+.captcha{
+    margin: 20px 0 3px;
+    width: 50%;
+    height: 60px;
+
+    .captcha-wrapper{
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .captcha-box{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 1px solid black;
+            border-radius: 10px 0 0 10px;
+            background: url(../resources/images/background/white-pattern.jpg) center 50%;
+
+        }
+    
+    
+        .captcha-char{
+            display: inline-block;
+            font-size: 1.3rem;
+        }
+
+        .captcha-reset-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 70px;
+            font-size: 1.5rem;
+            background: rgb(54, 54, 54);
+            color: white;
+            border-radius: 0 10px 10px 0;
+            transition: 300ms;
+            cursor: pointer;
+
+            &:hover{
+                color: v.$theme-color;
+                font-size: 1.8rem;
+            }
+        }
+
+    }
+  
+}

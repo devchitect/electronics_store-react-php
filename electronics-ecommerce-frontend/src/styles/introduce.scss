@@ -1,0 +1,36 @@
+@use '_variables.scss' as v;
+
+.introduce{
+    padding: 0 13%;
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 80px;
+
+    .introduce-content{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 10px;
+        padding: 20px 0;
+
+        &:hover{
+            box-shadow: 0 0 10px lightgrey;
+        }
+
+        .introduce-icon{
+            font-size: 35px;
+        }
+
+        div:last-child{
+            h5{
+                font-size: 1rem;
+            }
+
+            h6{
+                font-weight: normal;
+                font-size: 0.75rem;
+            }
+        }
+    }
+}

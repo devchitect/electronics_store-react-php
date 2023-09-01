@@ -1,0 +1,140 @@
+@use '_variables.scss' as v;
+
+.completion{
+    padding: 0 13%;
+    margin: 50px 100px;
+}
+.completion-title{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.order-details{
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border: 1px solid grey;
+    border-radius: 5px;
+
+    .goodbye{
+        text-align: center;
+        background: rgb(241, 241, 241);
+        padding: 10px 20px;
+        margin: 30px 0 10px;
+        border-radius: 10px;
+
+        .logo{
+            display: block;
+            margin: 10px auto;
+            height: 60px;
+        }
+    }
+
+    .order-title{
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid grey;
+    }
+
+    .intro{
+        padding: 15px 0;
+    }
+
+    .product{
+        display: grid;
+        grid-template-columns: 70% 30%;
+        border-bottom: 1px solid lightgrey;
+        align-items: center;
+        padding: 5px;
+
+        div{
+           
+            &:first-child{
+            }
+
+            &:last-child{
+                padding-left: 10px;
+            }
+        }
+        
+    }
+
+    .total{
+        display: grid;
+        grid-template-columns: 70% 30%;
+        padding: 5px;
+        font-weight: bold;
+
+        &:last-child{
+            border-top: 1px solid black;
+        }
+
+        span{
+            &:last-child{
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .price{
+        &::before{
+            content: '$';
+        }
+    }
+
+    div{
+        line-height: 1.5rem;
+
+        h5{
+            margin-top: 10px;
+            font-size: 0.9rem;
+            border-bottom: 1px dashed grey;
+            padding-bottom: 5px;
+        }
+
+        span{
+            &:first-child{
+                display: inline-block;
+                width: 180px;
+            }
+        }
+    }
+}
+
+.completion-btn-box{
+    display: flex;
+    justify-content: center;
+}
+.completion-btn{
+    position: relative;
+    display: inline-block;
+    border: 3px double grey;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+
+    &:hover{
+        color: v.$theme-color;
+        box-shadow: 0 0 5px grey;
+
+        &::before{
+            width: 100%;
+            right: unset;
+            left: 0;
+        }
+    }
+
+    &:before{
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background:rgba(0, 0, 0, 0.8);
+        transition:  300ms all ease;
+        // transform: scaleX(0);
+        // transform-origin: left;
+        z-index: -1;
+    }            
+}

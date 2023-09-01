@@ -1,0 +1,62 @@
+@use '_variables.scss' as v;
+
+.my-order{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-bottom: 100px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 30px;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.order-box{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+
+    .order-box-title{
+        border-bottom: 1px solid black;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .order-box-content{
+        font-size: 0.88rem;
+    }
+
+    .order-btn{
+        font-size: v.$font-size;
+        margin: 8px auto;
+        display: block;
+        border-radius: 5px;
+        padding: 5px 20px;
+        position: relative;
+            
+        &:hover{
+            color: v.$theme-color;
+            box-shadow: 0 0 5px grey;
+
+            &::before{
+                width: 100%;
+                right: unset;
+                left: 0;
+            }
+        }
+
+        &:before{
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background:rgba(0, 0, 0, 0.8);
+            transition:  300ms all ease;
+            // transform: scaleX(0);
+            // transform-origin: left;
+            z-index: -1;
+        }            
+    }
+}

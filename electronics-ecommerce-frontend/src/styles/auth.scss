@@ -1,0 +1,50 @@
+.account-wrapper{
+    padding: 0 13%;
+}
+
+.account-title{
+    text-align: center;
+    margin: 25px 0 50px;
+}
+
+.account-navigate{
+    display: flex;
+    justify-content: center;
+
+    .acc-btn{
+        margin: 0 20px;
+        padding: 10px 20px 10px;
+        border-radius: 10px 10px 0 0;
+        text-decoration: none;
+        color: black;
+        background: lightgrey;
+        transform-origin: bottom;
+        transition: 300ms;
+        font-size: 0.9rem;
+        border-width: 2px 2px 0 2px;
+        border-color: transparent; 
+        border-style: solid; 
+        position: relative;
+        letter-spacing: 1px;
+
+        &:hover{
+            border-color: cyan; 
+            border-style: solid; 
+            border-width: 2px 2px 0 2px;
+        }
+    }
+}
+
+.link-active{
+    background : rgba(0, 0, 0, 0.8);
+    color : cyan;
+    transform : scale(1.2);
+    text-shadow : 0 0 10px cyan;
+}
+
+.link-deactive{
+    background : lightgrey;
+    color : black;
+    transform : scale(1);
+    text-shadow : initial;
+}

@@ -1,0 +1,25 @@
+
+.breadcrumb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.55rem;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 25px 0;
+    
+    .crumb{
+        display: inline-block;
+       
+        &::after{
+            content:'\F280';
+            padding: 0 10px;
+            font-family: "bootstrap-icons";
+            font-size: 0.9rem;
+        }
+
+        &:last-child::after{
+            content: "";
+        }
+    }
+}

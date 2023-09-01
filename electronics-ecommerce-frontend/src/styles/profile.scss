@@ -1,0 +1,111 @@
+
+.profile{
+    margin: 0 0 100px;
+}
+
+.profile-title{
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed grey;
+}
+
+.profile-box{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 30px;
+
+    .pbox-basic,.pbox-coupons{
+        margin: 0 25px;
+    }
+
+    .pbox-title{
+        text-align: center;
+    }
+
+    .profile-row{
+        display: flex;
+        padding: 18px 0 5px;
+        border-bottom: 1px solid lightgrey;
+
+        .profile-label{
+            font-weight: bold;
+            width: 120px;
+        }
+
+        .profile-addition{
+            padding: 0 20px;
+        }
+
+        .profile-button{
+            border-radius: 5px;
+            padding: 8px 20px;
+
+            &:hover{
+                background: rgb(53, 53, 53);
+                color:cyan;
+            }
+        }
+    }
+}
+
+
+
+
+.email-verify-popup{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vW;
+    height: 100vH;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10101;
+
+    .verify-form{
+        text-align: center;
+        padding: 50px 100px 50px;
+        background: white;
+        border-radius: 10px ;
+
+        h3{
+            padding: 5px 0 30px;
+        }
+
+        input{
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        .verify-btn-box{
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0 0;
+            align-items: center;
+        
+            .verify-btn{
+                padding: 8px 10px;
+                border: 1px solid black;
+                border-radius: 5px;
+                margin: 10px 0; 
+                width: 100%;
+                cursor: pointer;
+
+                &:hover{
+                    color: cyan;
+                    background: rgb(56, 56, 56);
+                }
+            }
+        }
+
+        .verify-error{
+            margin: 20px 0 0;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+    }
+}

@@ -1,0 +1,102 @@
+@use '_variables.scss' as v;
+
+.banner{
+    margin: 50px 0;
+    padding: 0 13%;
+    width: 100%;
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows: 300px 300px;
+    column-gap: 50px;
+    row-gap: 50px;
+    
+}
+
+.banner-main-wrapper{
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+    position: relative;
+
+    .banner-main{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px; 
+        overflow: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scroll-snap-align: center;
+        $images : 4;
+       
+        .banner-main-container{
+            display: flex;
+            height: 100%;
+            width: calc($images * 100%);
+        }
+        
+        a{
+            width: calc(100% / $images);
+            height: 100%;
+    
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+    }    
+    
+    .banner-btn{
+        background-color: rgba(63, 63, 63, 0.65);
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 1.2rem;
+        color: white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 30px;
+        transition: 300ms;
+
+        &:hover{
+            transform: translateY(-50%) scale(1.2);
+            color: v.$theme-color;
+            box-shadow: 0 0 5px v.$theme-color;
+        }
+    }
+
+    .banner-btn-right{
+        right: 0;
+    }
+}
+
+
+.banner-minor-top{
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+
+    
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.banner-minor-bot{
+    display: flex;
+    border-radius: 10px;
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    overflow: hidden;
+    
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+

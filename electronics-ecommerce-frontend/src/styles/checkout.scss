@@ -1,0 +1,231 @@
+@use '_variables.scss' as v;
+
+.checkout{
+    padding: 0 13%;
+    margin-bottom: 100px;
+  
+}
+
+.checkout-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 50px;
+}
+
+.checkout-box-title{
+    margin-bottom: 30px;
+}
+
+.checkout-order-table{
+    border: 3px double grey;
+    border-radius: 5px;
+    width: 90%;
+
+    thead{
+        display: block;
+        background: rgb(235, 235, 235);
+        border-bottom: 1px solid black;
+    }
+
+    tbody{
+        display: block;
+        border-bottom: 2px dashed grey;
+
+        tr{
+            &:nth-child(even){
+                background: rgb(235, 235, 235);
+            }
+
+            td{
+                .checkout-item-name{
+                    padding: 5px 0;
+                }
+    
+                .checkout-item-amount{
+                    font-size: 0.88rem;
+    
+                    span{
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    tfoot{
+        display: block;
+
+        tr{
+            &:nth-child(odd){
+                background: rgb(235, 235, 235);
+            }
+        }
+
+        .row-total{
+            border-top: 1px solid black;
+        }
+    }
+
+    tr{
+        display: grid;
+        grid-template-columns: 1fr 0.5fr;
+        padding: 10px 0;
+
+        th,td {
+            text-align: center;
+        }
+    }
+
+    .checkout-item-price{
+                
+        &::before{
+            content: '$';
+        }
+    }
+}
+
+
+.checkout-billing{
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed grey;
+    
+    .billing-details{
+
+        .client-name{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 30px;
+        }
+        .client-contact{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 30px;
+        }
+
+        .billing-details-field{
+        margin-bottom: 18px;
+        }
+        
+        .required{
+            margin: 0 0 20px;
+        }
+    }
+
+}
+
+.checkout-payment{
+
+    .checkout-payment-content{
+      
+
+        .payment-box{   
+            border: 3px double lightgrey;
+            border-radius: 15px;
+            padding: 10px 20px;
+            margin: 5px 0;
+
+            &:hover{
+                border: 3px solid v.$theme-color;
+
+            }
+
+            label{
+                display: flex;
+                align-items: center;
+
+                input[type = radio]{
+                    height: 18px;
+                    width: 18px;
+                    accent-color: cyan;
+                    margin-right: 15px;
+
+                    &:checked{
+                        box-shadow: 0 0 5px grey;
+                    }
+                }
+
+                .cash-label{
+                    padding: 20px 0;
+                }
+                
+            }
+
+            .payment-image-box{
+                padding: 15px 0;
+                height: 65px;
+
+                img{
+                    height: 100%;
+                }
+            }
+
+            .payment-image-box-stripe{
+                padding: 17px 0;
+
+                img{
+                    margin-right: 10px;
+                }
+            }
+
+
+            .paypal, .stripe, .cash{
+                padding-top: 15px;
+                border-top: 1px dashed grey;
+            }
+            .stripe{
+                padding: 10px 30px 10px;
+            }
+            
+        }
+    }
+   
+    
+}
+
+
+.checkout-submit-btn{
+    display: block;
+    border-radius: 8px;
+    border: 3px double grey;
+    padding: 10px 20px; 
+    position: relative;
+    font-weight: bold;
+    background: rgb(238, 238, 238);
+    z-index: 1;
+    overflow: hidden;
+    margin: 25px auto 15px;
+
+    &:hover{
+        color: v.$theme-color;
+        box-shadow: 0 0 5px grey;
+
+        &::before{
+            width: 100%;
+            right: unset;
+            left: 0;
+        }
+    }
+
+    &:before{
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background:rgba(0, 0, 0, 0.8);
+        transition:  300ms all ease;
+        // transform: scaleX(0);
+        // transform-origin: left;
+        z-index: -1;
+    }            
+}
+
+.wait-line{
+    letter-spacing: 1px;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px dashed grey;
+}

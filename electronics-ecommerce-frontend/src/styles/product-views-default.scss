@@ -1,0 +1,160 @@
+@use "_variables.scss" as v;
+
+.list-sales-wrapper{
+    margin: 50px 0;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    transition: 300ms;
+
+    &:hover{
+        box-shadow: 0 0 10px lightgrey;
+        border: 1px solid transparent;
+    }
+
+    .list-sales-title{
+        margin: 0 50px;
+        padding: 20px 0 10px 0;
+        border-bottom: 1px solid grey;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+
+        h5{
+            font-size: 1.1rem;
+
+        }
+    }
+}
+
+.list-sales-container{
+    $sales_columns : 5;
+    $sales_space : 30px;
+    padding: 0 50px 30px 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    
+    .sales-card{
+        width: calc(100% / $sales_columns - $sales_space);
+        margin-left: calc($sales_space);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:  $sales_space;
+        padding: 10px 20px 18px;
+        border-radius: 10px;
+        border: 1px dotted grey;
+        overflow: hidden;
+        transition: 300ms;
+
+        &:hover{
+            box-shadow: 0 0 13px rgb(182, 182, 182);
+            border: 1px dotted transparent;
+
+            .sales-card-img{
+            
+                img{
+                    transform: scale(1.15);
+                }
+
+                .sales-info-buttons{
+                    opacity: 1;
+                }
+            }
+
+            .sales-info-title{
+                font-weight: bold;
+            }
+
+            .valid-price{
+                font-weight: bold;
+            }
+
+
+        }
+
+        .sales-card-img{
+            width: 200px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 13px;
+            margin-bottom: 15px;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+                transition: 500ms;
+            }
+
+            .sales-info-buttons{
+                opacity: 0;
+                display: flex;
+                position: absolute;
+                justify-content: space-evenly;
+                height: 100%;
+                width: 100%;
+                align-items: flex-end;
+
+                .sales-nav-btn {
+                    border-radius: 10px ;
+                    padding: 5px 13px;
+                    border: none;
+                    background: rgba(32, 32, 32, 0.685);
+                    color: white;
+                    transition: 300ms;
+
+                    &:hover{
+                        background: rgba(32, 32, 32, 0.885);
+                        transform: scale(1.15);
+                        transform-origin: bottom;
+                        color: v.$theme-color;
+                    }
+                }
+            }
+        }
+
+        .sales-info{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            overflow: hidden;
+            text-align: center;
+
+            .sales-info-title{
+                font-size: 0.9rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+            .sales-info-category{
+                font-size: 0.80rem;
+                color: grey;
+            }
+    
+            .sales-info-price{
+                display: flex;
+                justify-content: space-evenly;
+                width: 100%;
+                
+                span {
+                    display: inline-block;
+    
+                }
+    
+                .unvalid-price::before, .valid-price::before{
+                    content: '$';
+                }
+
+                .unvalid-price{
+                    text-decoration: line-through;
+                    color: grey;
+                }
+            }
+        }
+    }
+}

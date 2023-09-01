@@ -1,0 +1,67 @@
+@use "_variables.scss" as v;
+
+.simple-nav{
+    position: relative;
+    padding: 0 13%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom, black ,#262829, #434343 );
+    justify-content: space-between;
+    font-size: v.$font-size;
+}
+
+.simple-nav-links{
+    display: flex;
+
+    .simple-nav-link{
+        text-decoration: none;
+        color: white;
+        padding: 10px 0;
+        margin-right: 20px;
+        transition: 300ms all ease;
+        cursor: pointer;
+        padding-right: 20px;
+
+        &:hover{
+            transform: scale(1.1);
+            color: v.$theme-color;
+            text-shadow: 0 0 1px cyan;
+        }
+    }
+}
+
+.email-wrap{
+    display: flex;
+
+    .email{
+        padding: 10px 0;
+        text-decoration: none;
+        color: white;
+        transition: 300ms all ease;
+    
+        &:hover{
+            transform: scale(1.1);
+            color: v.$theme-color;
+            text-shadow: 0 0 1px cyan;
+        }
+    }
+}
+
+.phone-wrap{
+    display: flex;
+
+    .phone{
+        padding: 10px 0;
+        text-decoration: none;
+        color: white;
+        transition: 300ms all ease;
+    
+        &:hover{
+            transform: scale(1.1);
+            color: v.$theme-color;
+            text-shadow: 0 0 1px cyan;
+        }
+    }
+}
+
